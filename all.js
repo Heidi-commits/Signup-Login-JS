@@ -20,7 +20,7 @@ console.log(obj);
   )
   .then(function (response) {
     alert(response.data.message);
-    account.value = "";
+    email.value = "";
     password.value = "";
   })
   .catch(function (error) {
@@ -29,11 +29,11 @@ console.log(obj);
 }
 
 const loginAccount = document.querySelector(".login-account");
-const loginPassword = document.querySelector("login-password");
-const loginSend = document.querySelector("login-send");
+const loginPassword = document.querySelector(".login-password");
+const loginSend = document.querySelector(".login-send");
 
 loginSend.addEventListener("click", function(e){
-LognIn()
+LogIn()
 })
 function LogIn(){
     if(loginAccount.value==""||loginPassword.value=="") {
@@ -41,8 +41,8 @@ function LogIn(){
         return;
     }
 let obj = {};
-obj.loginAccount = loginAccount.value;
-obj.loginPassword = loginPassword.value;
+obj.email = loginAccount.value;
+obj.password = loginPassword.value;
 console.log(obj);
 
   axios.post('https://hex-escape-room.herokuapp.com/api/user/signin',obj
